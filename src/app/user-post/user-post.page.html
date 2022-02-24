@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear"  (click)="goBack()">
+      <ion-icon name="home-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let p of posts">
+    <ion-card>
+      <img [src]="p.image" />
+      <ion-item>
+        <ion-avatar slot="start">
+          <img [src]="p.owner.picture" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{p.owner.firstName}}</h2>
+        </ion-label>
+      </ion-item>
+      <ion-card-header>
+        <ion-card-title>{{p.text}}</ion-card-title>
+      </ion-card-header>
+      <ion-list *ngFor="let tag of p.tags">
+        <ion-chip>
+          <ion-label>{{tag}}</ion-label>
+        </ion-chip>
+      </ion-list>
+    </ion-card>
+  </ion-list>
+</ion-content>

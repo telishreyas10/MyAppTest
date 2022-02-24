@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'user-post',
+    loadChildren: () => import('./user-post/user-post.module').then( m => m.UserPostPageModule)
+  },
 ];
 
 @NgModule({
